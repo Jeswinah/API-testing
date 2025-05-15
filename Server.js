@@ -38,6 +38,5 @@ app.get("/books", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is listenting at port ${port}`);
-});
+
+module.exports = app;
