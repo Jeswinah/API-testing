@@ -1,12 +1,15 @@
-const moongose = require("mongoose");
+const mongoose = require("mongoose");
 
 const db = () => {
   try {
-    moongose.connect("mongodb://localhost:27017/db").then(() => {
-      console.log("Database connected sucessfully");
+    mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }).then(() => {
+      console.log("Database connected successfully");
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
